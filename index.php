@@ -1,2 +1,8 @@
-echo "test";
-test2323423
+<?php
+// CREATED BY: SANDER, AMOS, JASON
+// 07/07/2021
+// HACKATON
+
+// WIP
+
+?>
