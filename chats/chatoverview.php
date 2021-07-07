@@ -19,8 +19,8 @@ HACKATON
 // HACKATON
 
 //includes the files needed to make a connection with the database.
-include("database/config.php");
-include("database/opendb.php");
+include("../database/config.php");
+include("../database/opendb.php");
 
 // creates a select query who will select the id, name and password from the table chats (and orders it by id)
 $query = "SELECT id, name, password ";
@@ -41,27 +41,12 @@ if ($preparedquery->errno) {
 		echo "Er zijn geen chats";
 	} else {
 		// if there are any rows it will displace these within a table, with table headers and table data/rows.
-		//opens the table
-		echo "<table>";
-			echo "<tr>";
-	   		 echo "<th>ID</th>";
-	   		 echo "<th>Naam</th>";
-	   		 echo "<th>Wachtwoord</th>";
-	  		echo "</tr>";
-
+	   	echo "<b>Chat List</b><br><br>";
 		while($row = $result->fetch_assoc()) {
-			// puts the right data in the table data cells.
-	 		echo "<tr>";
-	   		 echo "<td>" . $row['id'] . "</td>";
-	   		 echo "<td>" . $row['name'] . "</td>";
-	   		 echo "<td>" . $row['password'] . "</td>";
-	  		echo "</tr>";
-
+			// echos the chats onto the screen
+	   		// echo $row['name'] . "<br>";
+			echo "<a href=\"chatverify?". $row['name'] . "\">" . $row['name'] . "</a><br>";
 		};
-		// closes the table
-		echo "</table>";
-		// gives the amount of rows given back from the query (amount of chats)
-		echo "<br><br>Totaal zijn er " . $result->num_rows . " chat(s).";
 	}
 }
 // closes the prepared query
@@ -69,7 +54,7 @@ $preparedquery->close();
 
 
 // includes / executes a file that closes the database.
-include("database/closedb.php");
+include("../database/closedb.php");
 
 ?>
 
