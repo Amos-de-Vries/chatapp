@@ -38,7 +38,7 @@ if ($preparedquery->errno) {
 	// puts the information given back from the select statement into the result variable, wich will then check how many rows there are.
 	$result = $preparedquery->get_result();
 	if ($result->num_rows===0) {
-		echo "Er zijn geen broden";
+		echo "Er zijn geen chats";
 	} else {
 		// if there are any rows it will displace these within a table, with table headers and table data/rows.
 		//opens the table
@@ -60,8 +60,8 @@ if ($preparedquery->errno) {
 		};
 		// closes the table
 		echo "</table>";
-		// gives the amount of rows given back from the query (amount of bread)
-		echo "<br><br>Totaal zijn er " . $result->num_rows . " Broden.";
+		// gives the amount of rows given back from the query (amount of chats)
+		echo "<br><br>Totaal zijn er " . $result->num_rows . " chat(s).";
 	}
 }
 // closes the prepared query
@@ -70,7 +70,6 @@ $preparedquery->close();
 
 // includes / executes a file that closes the database.
 include("database/closedb.php");
-
 
 ?>
 
