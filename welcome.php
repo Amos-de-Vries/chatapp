@@ -19,6 +19,7 @@
                 <form action="login/login.php" method = "POST" >
                     <input type="text" id="username" placeholder="username" name="username" required/>
                     <input type="text" name="password" id="password" placeholder="password" required/>
+                    <button type="submit">login</button>
                 </form>
             </div>
         </body>

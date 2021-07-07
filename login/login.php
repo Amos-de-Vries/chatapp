@@ -69,7 +69,7 @@
 	$_SESSION['username'] = $username;
 	$_SESSION['password'] = $hashedPassword;
 
-    header("location:../chats/chatoverview.php");
+    header("location:../index.html");
 
 
 	mysqli_commit($dbaselink);
